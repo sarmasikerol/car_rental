@@ -1,12 +1,28 @@
+import { useState } from "react";
 import { CarType } from "../../types";
 import Button from "../button";
 import Info from "./Info";
+import Modal from "../modal";
 
 type Props = {
   car: CarType;
 };
 
 const Card = ({ car }: Props) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleOpen = () => {
+    setIsOpen(true);
+
+    document.body.style.overflow = "hidden";
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+
+    document.body.style.overflow = "auto";
+  };
+
   return (
     <div className="car-card">
       {/* araba ismi */}
@@ -39,9 +55,12 @@ const Card = ({ car }: Props) => {
             desings="w-full py-[25px] text-white"
             title="Daha fazla"
             icon="right-arrow.svg"
+            handleClick={handleOpen}
           />
         </div>
       </div>
+
+      <Modal isOpen={isOpen} close={handleClose} car={car} />
     </div>
   );
 };
