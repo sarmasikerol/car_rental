@@ -9,7 +9,7 @@ const Header = () => {
           <img width={50} src="/bmw.png" alt="" />
         </Link>
 
-        <Button title="selam" desings="min-w-[130px]" />
+        <Button title="Kaydol" desings="min-w-[130px]" />
       </div>
     </header>
   );

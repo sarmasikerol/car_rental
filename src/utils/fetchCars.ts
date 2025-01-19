@@ -7,16 +7,29 @@ const options = {
   },
 };
 
-// Asenkron fonksiyonların return tipinde doğrudan fonksiyonun return ettiği veriyi yazamayız. Fonksiyonların hata döndürme ihtimalini de göze alarak ts'in içersinde bulunan Promise tipine return verimiz generic olarak gönderilmeli
-export const fetchCars = async (): Promise<CarType[]> => {
+// gelen parametrelerin tipini tanımla
+type Parameters = {
+  limit: number;
+  make?: string;
+  model?: string;
+  fuel_type?: string;
+  year?: string;
+};
+
+// Asenkron fonksiyonların return tipinde doğrudan fonksiyonun return ettiği veriyi yazamayız. Fonksiyonların hata döndrime ihtimalinide göze alarak ts'in içerisinde bulunan Promise tipine return verimiz generic olarak gönderilmeli
+export const fetchCars = async ({
+  limit,
+  make = "bmw",
+  model = "",
+  fuel_type = "",
+  year = "",
+}: Parameters): Promise<CarType[]> => {
   try {
-    const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=BMW&model=m4`;
+    const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=BMW`;
 
     const res = await fetch(url, options);
 
     const data = await res.json();
-
-    console.log(data);
 
     return data;
   } catch (error) {

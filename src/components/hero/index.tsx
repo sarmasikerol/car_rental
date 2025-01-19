@@ -2,6 +2,12 @@ import Button from "../button";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+    // katalog alanına kaydır
+  const scroll = () => {
+    const filter = document.querySelector("#filter");
+
+    filter?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className="hero">
       <div className="pt-14 padding-x flex-1 max-h-[920px]">
@@ -13,7 +19,7 @@ const Hero = () => {
           kılabilirsin.
         </p>
 
-        <Button title="Arabaları Keşfet" desings="mt-10" />
+        <Button handleClick={scroll} title="Arabaları Keşfet" desings="mt-10" />
       </div>
       <div className="flex justify-center">
         <motion.img
