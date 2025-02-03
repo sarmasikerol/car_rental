@@ -1,31 +1,24 @@
-# React + TypeScript + Vite
+# Car Rental Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **Car Rental** web application developed using **TypeScript** and **React**. This app allows users to browse, select, and rent cars from a list. It includes features such as car details, booking, and dynamic transitions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Car Listings**: View available cars for rent with details.
+- **Car Booking**: Select a car and book it for rental.
+- **Dynamic Animations**: Smooth transitions with `framer-motion`.
+- **Responsive Design**: Mobile and desktop-friendly interface.
+- **React Router**: Navigational structure to manage the app's routes.
+- **Custom Car Filters**: Use the `react-select` component to filter car listings based on criteria like car type, model, price, etc.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: For building the user interface.
+- **TypeScript**: For type safety and better developer experience.
+- **Framer Motion**: For smooth animations and page transitions.
+- **React Router DOM**: For handling routing and navigation in the app.
+- **React Select**: For custom dropdown selections and filters.
+- **CSS/SCSS**: For styling the application with custom designs.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# car_rental
+# Gif Screen
+![](ekran.gif)
